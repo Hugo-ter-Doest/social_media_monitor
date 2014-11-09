@@ -1,0 +1,27 @@
+{
+    "name": "SocialMediaMonitor",
+    "description": "",
+    "version": "0.0.1",
+    "main": "./SocialMediaMonitor.js",
+    "author": {
+        "name": "Hugo W.L. ter Doest",
+        "email": "hwl.ter.doest@gmail.com"
+    },
+    "keywords": [],
+    "licenses": {
+        "type": "gpl30"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Hugo-ter-Doest/SocialMediaMonitor.git"
+    },
+    "bugs": {
+        "url": "http://github.com/Hugo-ter-Doest/SocialMediaMonitor/issues"
+    },
+    "dependencies": {
+      "fs" : "*",
+      "log4js": "*",
+      "kue": "*",
+      "twitter": "*"
+    }
+}
