@@ -16,11 +16,14 @@
 
 var kue = require('kue');
 var TwitterConnection = require('./lib/TwitterConnector');
+var InstagramConnection = require('./lib/InstagramConnector');
 var MessageProcessor = require('./lib/MessageProcessor');
 
 message_queue = kue.createQueue();
 console.log("Created queue");
-var twitter = new TwitterConnection(message_queue);
-console.log("Created Twitter connection");
+//var twitter = new TwitterConnection(message_queue);
+//console.log("Created Twitter connection");
+var instagram = new InstagramConnection(message_queue);
+console.log("Created Instagram connection");
 var message_processor = new MessageProcessor(message_queue);
 console.log("Created message processor");
