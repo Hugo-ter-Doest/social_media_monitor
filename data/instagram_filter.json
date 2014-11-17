@@ -1,8 +1,11 @@
 {
-  "tag_subscription": "imagis",
-  "geography_subscription_lon": "48.565464564",
-  "geography_subscription_lat": "2.34656589", 
-  "geography_subscription_radius": "100",
-  "user_subscription": "",
-  "location_subscription": "1257285"
+  "tag_subscription": true,
+  "tag_subscription_tag": "guitar",
+  "geography_subscription" : true,
+  "geography_subscription_lon": "48.856939",
+  "geography_subscription_lat": "2.352210", 
+  "geography_subscription_radius": "5000",
+  "user_subscription" : false,
+  "location_subscription" : true,
+  "location_id": "788029"
 }
