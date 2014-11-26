@@ -1,3 +1,7 @@
 {
-  "feeds": ["3769732"]
+  "groups": [{"id": "3208061", "name": "nodejs"}, 
+             {"id": "50758", "name": "ArchiMate"},
+             {"id": "1975256", "name": "Binnenlands Bestuur"},
+             {"id": "36781", "name": "The Enterprise Architecture Network"}],
+  "keywords": ["architecture", "innovation", "Javascript", "Nodejs"]
 }
