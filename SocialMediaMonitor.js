@@ -14,6 +14,10 @@
 //    
 //}).listen(9080, "");
 
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+logger.setLevel('DEBUG');
+
 var kue = require('kue');
 var TwitterConnection = require('./lib/TwitterConnector');
 var InstagramConnection = require('./lib/InstagramConnector');
@@ -21,16 +25,16 @@ var LinkedInConnection = require('./lib/LinkedInConnector');
 var MessageProcessor = require('./lib/MessageProcessor');
 
 message_queue = kue.createQueue();
-console.log("Created queue");
+logger.debug("Created queue");
 
 var twitter = new TwitterConnection(message_queue);
-console.log("Created Twitter connection");
+logger.debug("Created Twitter connection");
 
 var instagram = new InstagramConnection(message_queue);
-console.log("Created Instagram connection");
+logger.debug("Created Instagram connection");
 
 var linkedin = new LinkedInConnection(message_queue);
-console.log("Created LinkedIn connection");
+logger.debug("Created LinkedIn connection");
 
 var message_processor = new MessageProcessor(message_queue);
-console.log("Created message processor");
+logger.debug("Created message processor");
