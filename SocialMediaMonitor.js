@@ -18,13 +18,19 @@ var log4js = require('log4js');
 var logger = log4js.getLogger();
 logger.setLevel('DEBUG');
 
-var kue = require('kue');
+var Queue = require("SimpleQueue");
 var TwitterConnection = require('./lib/TwitterConnector');
 var InstagramConnection = require('./lib/InstagramConnector');
 var LinkedInConnection = require('./lib/LinkedInConnector');
 var MessageProcessor = require('./lib/MessageProcessor');
 
-message_queue = kue.createQueue();
+var number_concurrent_processes = 2;
+
+// new SimpleQueue(<func> worker, <func> callback[, <func> done[, <num> concurrent]])
+message_queue = new SimpleQueue(MessageProcessor.worker, 
+                                MessageProcessor.callback, 
+                                MessageProcessor.done, 
+                                number_concurrent_processes);
 logger.debug("Created queue");
 
 var twitter = new TwitterConnection(message_queue);
@@ -35,6 +41,3 @@ logger.debug("Created Instagram connection");
 
 var linkedin = new LinkedInConnection(message_queue);
 logger.debug("Created LinkedIn connection");
-
-var message_processor = new MessageProcessor(message_queue);
-logger.debug("Created message processor");
