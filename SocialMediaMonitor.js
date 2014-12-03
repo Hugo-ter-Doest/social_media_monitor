@@ -27,10 +27,8 @@ var MessageProcessor = require('./lib/MessageProcessor');
 var number_concurrent_processes = 2;
 
 // new SimpleQueue(<func> worker, <func> callback[, <func> done[, <num> concurrent]])
-message_queue = new SimpleQueue(MessageProcessor.worker, 
-                                MessageProcessor.callback, 
-                                MessageProcessor.done, 
-                                number_concurrent_processes);
+message_queue = new Queue(MessageProcessor.worker, MessageProcessor.callback, 
+                          MessageProcessor.done, number_concurrent_processes);
 logger.debug("Created queue");
 
 var twitter = new TwitterConnection(message_queue);
