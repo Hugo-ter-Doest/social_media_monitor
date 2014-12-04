@@ -31,11 +31,11 @@ message_queue = new Queue(MessageProcessor.worker, MessageProcessor.callback,
                           MessageProcessor.done, number_concurrent_processes);
 logger.debug("Created queue");
 
-var twitter = new TwitterConnection(message_queue);
-logger.debug("Created Twitter connection");
+//var twitter = new TwitterConnection(message_queue);
+//logger.debug("Created Twitter connection");
 
 var instagram = new InstagramConnection(message_queue);
 logger.debug("Created Instagram connection");
 
-var linkedin = new LinkedInConnection(message_queue);
-logger.debug("Created LinkedIn connection");
+//var linkedin = new LinkedInConnection(message_queue);
+//logger.debug("Created LinkedIn connection");
